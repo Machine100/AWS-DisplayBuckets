@@ -15,11 +15,12 @@ for item in response2:                                 #these are the bucketname
 
   
 
-	  
-##call s3 to list current buckets
-#response = s3.list_buckets()
-
-#get list of bucket names
+#Or use more compact syntax to do the same thing:
 #buckets = [bucket['Name'] for bucket in response['Buckets']]
+#print('Bucket List: %s' % buckets)   
 
-#print('Bucket List: %s' % buckets)                  
+#Or use the resource:
+#s3 = boto3.resource('s3')
+#for bucket in s3.buckets.all():
+#    print(bucket.name)
+               
