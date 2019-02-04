@@ -15,12 +15,15 @@ for item in response2:                                 #these are the bucketname
 
   
 
-#Or use more compact syntax to do the same thing:
+#Use more compact syntax to do the same thing:
 #buckets = [bucket['Name'] for bucket in response['Buckets']]
 #print('Bucket List: %s' % buckets)   
 
 #Or use the resource:
-#s3 = boto3.resource('s3')
-#for bucket in s3.buckets.all():
-#    print(bucket.name)
+#for bucket in s3resource.buckets.all():
+#print(bucket.name)
+
+#A call to client.list_objects will return the objects in a bucket:
+#response = s3client.list_objects(Bucket='asdfasdf-s3bucket-tftui51y564p')
+
                
